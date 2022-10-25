@@ -13,28 +13,28 @@ function Provider({ children }) {
     'population', 'orbital_period', 'diameter', 'rotation_period', 'surface_water',
   ]);
 
-  const handleChangeName = ({ target }) => {
+  const handleChangeName = useCallback(({ target }) => {
     const { value } = target;
     setName(value);
-  };
+  }, []);
 
-  const handleChangeColumFilter = ({ target }) => {
+  const handleChangeColumFilter = useCallback(({ target }) => {
     const { value } = target;
 
     setColumFilter(value);
-  };
+  }, []);
 
-  const handleComparisonFilter = ({ target }) => {
+  const handleComparisonFilter = useCallback(({ target }) => {
     const { value } = target;
 
     setComparisonFilter(value);
-  };
+  }, []);
 
-  const handleNumberFilter = ({ target }) => {
+  const handleNumberFilter = useCallback(({ target }) => {
     const { value } = target;
 
     setNumberFilter(value);
-  };
+  }, []);
 
   const filterSelect = useCallback(() => {
     if (comparisonFilter === 'maior que') {
